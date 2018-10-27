@@ -12,4 +12,18 @@ $(document).ready(function() {
         $(this).nextAll().remove();
     })
 
+    $('.logout').click(function (e) {
+        console.log("logout");
+		$.ajax({
+            url: 'logout',
+            type: 'GET',
+            data: {},
+            success: function (data) {
+                window.location = "/login";
+            },
+            error: function (e) {
+                console.log(e)
+            },
+        })
+    })
 });

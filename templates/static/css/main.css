@@ -43,3 +43,21 @@ body {
 .wrapper{
     height: 88%;
 }
+
+/**/
+.other{
+    margin-top: 20px;
+}
+
+.add_dis{
+    width: 90%;
+    margin: 50px auto 20px auto;
+}
+
+.new1{
+    list-style: none;
+    text-decoration: none;
+    padding:10px;
+    float: right;
+    padding-right: 15px;
+}

@@ -234,7 +234,7 @@
                     <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
                         <li><a href="#"><i class="fa fa-user"></i>  Profile</a></li>
                         <li><a href="#"><i class="fa fa-cog"></i>  Settings</a></li>
-                        <li><a href="#"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                        <li class="logout"><a href="#"><i class="fa fa-sign-out"></i> Log Out</a></li>
                     </ul>
                 </li>
 
@@ -257,11 +257,12 @@
 {#                            </a>#}
                         </div>
                         <ul class="nav nav-pills nav-stacked mail-navigation file_mau">
-                            <li class="active"><a href="mail.html"> <i class="fa fa-inbox"></i> 新建文件<span class="label label-danger pull-right inbox-notification">4</span></a></li>
+                            <li class="active"><a href="#"><i class="fa fa-inbox"></i> 新建文件</a></li>
                             <li><a href="#"> <i class="fa fa-envelope-o"></i> 新建文件夹</a></li>
-{#                            <li><a href="#"> <i class="fa fa-certificate"></i></a></li>#}
-                            <li><a href="#"> <i class="fa fa-file-text-o"></i> 编辑<span class="label label-info pull-right inbox-notification">34</span></a></li>
-                            <li><a href="#"> <i class="fa fa-trash-o"></i> 删除 </a></li>
+{#                            <li><a href="#"> <i class="fa fa-certificate"></i><span class="label label-info pull-right inbox-notification">34</span></a></li>#}
+                            <li><a href="#"> <i class="fa fa-file-text-o"></i> 编辑文件</a></li>
+                            <li><a href="#"> <i class="fa fa-trash-o"></i> 删除文件/文件夹 </a></li>
+                            <li><a href="#"> <i class="fa fa-certificate"></i>文件锁定</a></li>
                         </ul>
 {##}
 {#                        <ul class="nav nav-pills nav-stacked labels-info ">#}
@@ -272,6 +273,15 @@
 {#                            <li> <a href="#"> <i class="fa fa-comments text-muted "></i> Tis man <p>I do not think</p></a>  </li>#}
 {#                        </ul>#}
                     </div>
+                    <header class="header other"> <h4>磁盘空间</h4> </header>
+                                    <div class="progress progress-striped add_dis">
+                                        <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
+                                            <span class="">80% </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="new new1">See All Pending Task</li>
                     <!--<footer class="text-center">
                         <div class="btn-group">
                             <a href="javascript:;" class="btn mini btn-default">

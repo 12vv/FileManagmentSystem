@@ -49,6 +49,12 @@ def login(request):
         return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')
 
 
+# logout 登出
+def logout(request):
+    del request.session["id"]
+    return render(request, 'static/html/login.html')
+
+
 # ID_confirm id验证
 @csrf_exempt
 def id_confirm(request):
@@ -84,5 +90,6 @@ def register(request):
         models.User.objects.create(id=id, password=password, mailbox=mailbox)
         data = 'success'
         return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')
+
 
 
