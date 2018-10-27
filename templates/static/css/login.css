@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.index-one {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.index-two {
+    width: 100%;
+    text-align: center;
+}
+
+.mycanvas {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.middle {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+
+.main-body {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+    min-height: 500px;
+    *width: 300px;
+}
+
+.main-body-another {
+    margin-top: 15vh;
+}
+
+.index-header {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "微软雅黑";
+}
+
+.intro {
+    font-weight: 400;
+    color: rgb(85, 85, 85);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.index-tab-navs {
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+
+.navs-slider {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.login {
+    float: left;
+    width: 4em;
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+    line-height: 35px;
+}
+
+.login-add {
+    /* color: rgb(54,182,161); */
+    color: rgb(85, 85, 85);
+}
+
+.register {
+    float: left;
+    width: 4em;
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+    line-height: 35px;
+}
+
+.register-add {
+    /* color: rgb(54, 182, 161); */
+    color: rgb(85, 85, 85);
+}
+
+.navs-slider-line {
+    position: absolute;
+    /* background-color: rgb(54, 182, 161); */
+    background-color: rgb(85, 85, 85);
+    width: 2.5em;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    margin: 0 0.7em;
+    transition: left .15s ease-in;
+}
+
+.line-move {
+    left: 4em;
+}
+
+.login-form {
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.login-user-wrap {
+    position: relative;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.login-form input {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: #fff;
+    outline: none;
+    color: #555;
+    font-family: "微软雅黑";
+}
+
+#login-user {
+    display: block;
+    width: 100%;
+    padding: 1em .8em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.login-password-wrap {
+    position: relative;
+}
+
+#login-password {
+    display: block;
+    width: 100%;
+    padding: 1em .8em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.login-form label,
+.register-form label {
+    display: none;
+    font-family: "微软雅黑";
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    padding: 0 8px;
+    color: #c33;
+    background-color: #fff;
+    cursor: text;
+}
+
+.remember-me {
+    float: left;
+    line-height: 66%;
+    color: rgb(85, 85, 85);
+    font-family: "微软雅黑";
+}
+
+.clear {
+    clear: both;
+}
+
+.b-login {
+    display: inline-block;
+    width: 300px;
+    font-family: "微软雅黑";
+    /* background-color: rgb(54, 182, 161); */
+    /* border: 1px solid rgb(54, 182, 161); */
+    background-color: rgb(85, 85, 85);
+    border: 1px solid rgb(85, 85, 85);
+    outline: none;
+    color: #fff;
+    line-height: 39px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+.b-login:hover {
+    background-color: #fff;
+    /* border: solid 1px rgb(54, 182, 161); */
+    /* color: rgb(54, 182, 161); */
+    border: solid 1px rgb(85, 85, 85);
+    color: rgb(85, 85, 85);
+}
+
+.input-register {
+    display: none;
+}
+
+.register-form {
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.register-form input {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #fff;
+    outline: none;
+    color: #555;
+    font-family: "微软雅黑";
+}
+
+.register-userid-wrap {
+    position: relative;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+#register-userid {
+    display: block;
+    width: 100%;
+    padding: 1em .8em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.register-email-wrap {
+    position: relative;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+#register-email {
+    display: block;
+    width: 100%;
+    padding: 1em .8em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.register-password-wrap {
+    position: relative;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+#register-password {
+    display: block;
+    width: 100%;
+    padding: 1em .8em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.register-confirm-wrap {
+    position: relative;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+#register-confirm {
+    display: block;
+    width: 100%;
+    padding: 1em .8em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.register-wel-wrap {
+    position: relative;
+}
+
+#register-wel {
+    display: block;
+    width: 100%;
+    padding: 1em .8em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.b-register {
+    display: inline-block;
+    width: 300px;
+    font-family: "微软雅黑";
+    /* background-color: rgb(54, 182, 161);
+	border: 1px solid rgb(54, 182, 161); */
+    background-color: rgb(85, 85, 85);
+    border: 1px solid rgb(85, 85, 85);
+    outline: none;
+    color: #fff;
+    line-height: 39px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+.b-register:hover {
+    background-color: #fff;
+    /* border: solid 1px rgb(54, 182, 161); */
+    /* color: rgb(54, 182, 161); */
+    color: rgb(85, 85, 85);
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.index-header img {
+    width: 300px;
+}
+
+.modal-dialog{
+    width: 300px;
+}

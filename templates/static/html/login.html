@@ -1,0 +1,91 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/blog.ico" type="image/x-icon' %}">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel">
+					模态框（Modal）标题
+				</h4>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+    <div class="index-main index-one">
+        <div class="main-body">
+            <div class="index-header">
+                <img src="{% static 'images/Batman_Logo.png' %}">
+                <h2 class="intro">文件管理系统</h2>
+            </div>
+            <div class="index-tab-navs">
+                <div class="navs-slider">
+                    <a class="login" href="#login">登录</a>
+                    <a class="register" href="#register">注册</a>
+                    <span class="navs-slider-line"></span>
+                </div>
+            </div>
+            <div class="input-login">
+                <div class="login-form" onkeydown="loginEnter(event);">
+                    <div class="login-user-wrap">
+                        <input type="text" id="login-user" placeholder="用户名">
+                        <label class="l-u-tip"></label>
+                    </div>
+                    <div class="login-password-wrap">
+                        <input type="password" id="login-password" placeholder="密码" maxlength="16">
+                        <label class="l-p-tip"></label>
+                    </div>
+                </div>
+                <label class="remember-me"><input type="checkbox" class="remember-me">记住我</label>
+                <div class="clear"></div>
+                <a class="b-login">登录</a>
+            </div>
+            <div class="input-register">
+                <div class="register-form" onkeydown="registerEnter(event);">
+                    <div class="register-userid-wrap">
+                        <input type="text" id="register-userid" placeholder="用户名(只能输入英文,数字和下划线)">
+                        <label class="r-u-tip"></label>
+                    </div>
+                    <div class="register-email-wrap">
+                        <input type="text" id="register-email" placeholder="邮箱">
+                        <label class="r-e-tip"></label>
+                    </div>
+                    <div class="register-password-wrap">
+                        <input type="password" id="register-password" placeholder="密码" maxlength="16">
+                        <label class="r-p-tip"></label>
+                    </div>
+                    <div class="register-confirm-wrap">
+                        <input type="password" id="register-confirm" placeholder="确认密码" maxlength="16">
+                        <label class="r-c-tip"></label>
+                    </div>
+                    <!--<div class="register-wel-wrap">
+                        <input type="text" id="register-wel" placeholder="邀请码">
+                        <label class="r-w-tip"></label>
+                    </div>-->
+                </div>
+                <a class="b-register">注册</a>
+            </div>
+        </div>
+        <span class="middle"></span>
+    </div>
+    <div class="mycanvas"><canvas id="mycanvas"></canvas></div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/mycanvas.js' %}"></script>
+    <script src="{% static 'js/action.js' %}"></script>
+    <script src="{% static 'js/getvalue.js' %}"></script>
+</body>
+
+</html>

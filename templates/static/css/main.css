@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.modal-dialog{
+    width: 300px;
+}
+
+.column-title{
+    text-align: center;
+}
+
+.main-content{
+    height: 100%;
+    margin-left: 0;
+}
+
+.sticky-footer{
+    text-align: center;
+}
+
+.mail-box-info .header{
+    background: #fff;
+}
+
+.table-bordered>tbody>tr>td{
+    border-left: none;
+    border-right: none;
+}
+
+/*.adv-table table.display tr.odd.gradeA{*/
+    /*background-color: #fff;*/
+/*}*/
+
+/*  style.css */
+.wrapper{
+    height: 88%;
+}
