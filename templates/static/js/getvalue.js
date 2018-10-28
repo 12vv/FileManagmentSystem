@@ -6,6 +6,7 @@ $(document).ready(function() {
 	login();//登录
 	register_confirm();//注册表单验证
 	register_clear();
+	gb.modal.tip_small.init();
 });
 //登录
 function login() {
@@ -32,6 +33,7 @@ function login() {
 					window.location = base_url + "/main";
 				} else if (data == "error"){
 					$('.l-u-tip').text("用户名不存在或密码错误").fadeIn();
+					// gb.modal.tip_small.show('用户名不存在或密码错误', 'error');
 				}
 			},
 			error: function() {
@@ -188,17 +190,18 @@ function Confirm() {
 				},
 				success: function(data) {
 					if (data == "success") {
-						$("#myModalLabel").text("注册成功");
-						$('#myModal').modal();
+						// $("#myModalLabel").text("注册成功");
+						// $('#myModal').modal();
+						 gb.modal.tip_small.show('注册成功', 'success');
 					} else if (data == "error") {
-						$("#myModalLabel").text("无法注册");
-						$('#myModal').modal();
+						// $("#myModalLabel").text("无法注册");
+						// $('#myModal').modal();
+						gb.modal.tip_small.show('无法注册', 'success');
 					}
 				},
-				error: function() {
+				error: function(e) {
 					console.log("error");
-					$("#myModalLabel").text("无法注册");
-					$('#myModal').modal();
+					gb.modal.tip_small.show(e, 'success');
 				}
 			});
 		});

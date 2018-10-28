@@ -92,4 +92,13 @@ def register(request):
         return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')
 
 
-
+# upload 上传文件
+@csrf_exempt
+def upload(request):
+    if request.method == 'POST':
+        file = request.FILES.get('file')  # 获取文件对象，包括文件名文件大小和文件内容
+        print(file.name)  # 文件名
+        print(file.size)  # 文件大小
+        print(file.read())
+        data = 'success'
+        return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')

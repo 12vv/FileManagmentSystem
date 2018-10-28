@@ -27,4 +27,5 @@ urlpatterns = [
     path('testEmail', views.email_confirm),
     path('register', views.register),
     path('logout', views.logout),
+    path('upload', views.upload),
 ]
