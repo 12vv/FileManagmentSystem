@@ -2,12 +2,16 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 from sysite import models
+import time
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 
 import json
 from bson import ObjectId
+
+# 文件
+from django.core.files.storage import FileSystemStorage
 
 
 class JSONEncoder(json.JSONEncoder):
@@ -95,10 +99,16 @@ def register(request):
 # upload 上传文件
 @csrf_exempt
 def upload(request):
+    base_url = 'media/'
     if request.method == 'POST':
         file = request.FILES.get('file')  # 获取文件对象，包括文件名文件大小和文件内容
         print(file.name)  # 文件名
         print(file.size)  # 文件大小
-        print(file.read())
+        # print(file.read())
+        # with open(base_url + file.name, 'wb+')as dir:
+        #     for chunk in file.chunks():
+        #         dir.write(chunk)
+        date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+        models.File.objects.create(name=file.name, type='jpg', owner=request.session['id'], time=date, size=file.size)
         data = 'success'
         return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')

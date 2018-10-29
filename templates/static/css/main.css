@@ -79,6 +79,10 @@ body {
     width: 500px;
 }
 
+.add_ne{
+    width: 300px;
+}
+
 /*编辑框*/
 .add_ed{
     width: 800px;
@@ -123,4 +127,8 @@ ul.wysihtml5-toolbar > li {
 
 textarea{
     resize: none;
+}
+
+#info i{
+    padding-right: 10px;
 }

@@ -63,6 +63,8 @@ $(document).ready(function() {
                 console.log(file.name, file.size, file.type);
                 $('#myModal').modal('hide');
                 gb.modal.tip_small.show('上传成功', 'success');
+                //直接在页面显示
+                // $('#info').prepend("")
             }
         });
     })
@@ -74,5 +76,22 @@ $(document).ready(function() {
 
     $("#edit").click(function (e) {
         console.log($('.ed_text').val());
+    })
+
+    $('.new_file').click(function (e) {
+        console.log("新建文件夹");
+        $('#myModal_new').modal();
+    })
+
+    $('#new_file').click(function (e) {
+        file_name = $('#input_name').val();
+        console.log("成功创建文件夹" + file_name);
+        $('#myModal_new').modal('hide');
+        $('#info').prepend("<tr><td class=\"center \"><span class=\"pull-left chk\"><input type=\"checkbox\"/></span></td><td><i class=\"fa fa-file-o\"></i>"+file_name+"</td>\n" +
+            "<td>"+file_name+"</td>\n" +
+            "<td>"+file_name+"</td>\n" +
+            "<td>"+file_name+"</td>\n" +
+            "<td>A</td>\n" +
+            "<td>A</td></tr>");
     })
 });

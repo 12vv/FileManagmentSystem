@@ -21,7 +21,10 @@ $(function() {
             }],
         },
         method: {
+            //获取当前目录下所有文件
+            getFile: function (dir_name) {
 
+            }
         },
 
     })

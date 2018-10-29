@@ -241,7 +241,7 @@
 
                         <ul class="nav nav-pills nav-stacked mail-navigation file_mau">
                             <li><a href="#"><i class="fa fa-inbox"></i> 新建文件</a></li>
-                            <li><a href="#"> <i class="fa fa-envelope-o"></i> 新建文件夹</a></li>
+                            <li class="new_file"><a href="#"> <i class="fa fa-envelope-o"></i> 新建文件夹</a></li>
 {#                            <li><a href="#"> <i class="fa fa-certificate"></i><span class="label label-info pull-right inbox-notification">34</span></a></li>#}
                             <li class="edit"><a href="#"> <i class="fa fa-file-text-o"></i> 编辑文件</a></li>
                             <li><a href="#"> <i class="fa fa-trash-o"></i> 删除 </a></li>
@@ -284,9 +284,8 @@
             <div class="col-md-12">
                 <!--breadcrumbs start -->
                 <ul class="breadcrumb panel">
-                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="#">Dashboard</a></li>
-                    <li class="active">Current page</li>
                 </ul>
                 <!--breadcrumbs end -->
             </div>
@@ -369,6 +368,39 @@
     </div><!-- /.modal -->
 </div>
 
+                    <!-- 模态框（Modal） 新建文件夹-->
+<div class="modal fade" id="myModal_new" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content add_ne">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新建文件夹
+                </h4>
+            </div>
+            <div class="modal-body">
+                    <!--新建文件夹-->
+                    <div class="panel-body">
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">文件夹名</label>
+                                <input class="form-control" id="input_name" placeholder="文件夹名">
+                            </div>
+                        </form>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" id="new_file">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
                     <!-- 模态框（Modal） 编辑文件-->
 <div class="modal fade" id="myModal_edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -416,33 +448,20 @@
             <td class="center hidden-phone ">加锁</td>
             <td class="center hidden-phone ">加锁</td>
         <tbody role="alert" aria-live="polite" aria-relevant="all" id="info">
-        <tr class="gradeA" v-for="info in info_items"><td class="center "><span class="pull-left chk"><input type="checkbox"/></span></td>
-            <td class="  sorting_1"><i class="fa fa-file-o"></i>{% verbatim myblock %}{{ info.name }}{% endverbatim myblock %}</td>
-            <td class=" ">{% verbatim myblock %}{{ info.owner }}{% endverbatim myblock %}</td>
-            <td class="hidden-phone ">{% verbatim myblock %}{{ info.time }}{% endverbatim myblock %}</td>
-            <td class="center hidden-phone ">{% verbatim myblock %}{{ info.lock }}{% endverbatim myblock %}</td>
-            <td class="center hidden-phone ">A</td>
-            <td class="center hidden-phone ">A</td>
+        <tr class="" v-for="info in info_items"><td class="center "><span class="pull-left chk"><input type="checkbox"/></span></td>
+            <td><i class="fa fa-file-o"></i>{% verbatim myblock %}{{ info.name }}{% endverbatim myblock %}</td>
+            <td>{% verbatim myblock %}{{ info.owner }}{% endverbatim myblock %}</td>
+            <td>{% verbatim myblock %}{{ info.time }}{% endverbatim myblock %}</td>
+            <td>{% verbatim myblock %}{{ info.lock }}{% endverbatim myblock %}</td>
+            <td>A</td>
+            <td>A</td>
         </tr>
+
         <!--<tr class="gradeA even"><td class="center "><img src="images/details_open.png"></td>
             <td class="  sorting_1">Webkit</td>
             <td class=" ">Safari 1.3</td>
             <td class="hidden-phone ">OSX.3</td>
             <td class="center hidden-phone ">312.8</td>
-            <td class="center hidden-phone ">A</td>
-        </tr><tr class="gradeC odd"><td class="center "><img src="images/details_open.png"></td>
-            <td class="  sorting_1">Trident</td>
-            <td class=" ">Internet
-                Explorer 5.0</td>
-            <td class="hidden-phone ">Win 95+</td>
-            <td class="center hidden-phone ">5</td>
-            <td class="center hidden-phone ">C</td>
-        </tr><tr class="gradeA even"><td class="center "><img src="images/details_open.png"></td>
-            <td class="  sorting_1">Trident</td>
-            <td class=" ">Internet
-                Explorer 5.5</td>
-            <td class="hidden-phone ">Win 95+</td>
-            <td class="center hidden-phone ">5.5</td>
             <td class="center hidden-phone ">A</td>
         </tr>--></tbody></table>
 
