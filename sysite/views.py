@@ -3,6 +3,8 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 from sysite import models
 import time
+import re
+import os
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
@@ -102,13 +104,36 @@ def upload(request):
     base_url = 'media/'
     if request.method == 'POST':
         file = request.FILES.get('file')  # 获取文件对象，包括文件名文件大小和文件内容
-        print(file.name)  # 文件名
-        print(file.size)  # 文件大小
+        dir = request.POST.get('dir')
+        print(dir)
+        fileName = file.name
+        # 正则表达式获取后缀
+        prefix = re.findall(r'(.+?)\.', fileName)[0]
+        # type = re.findall(r'\.[^.\\/:*?"<>|\r\n]+$', fileName)[0]
+        # python获取后缀
+        type = os.path.splitext(fileName)[-1][1:]
+
         # print(file.read())
         # with open(base_url + file.name, 'wb+')as dir:
         #     for chunk in file.chunks():
         #         dir.write(chunk)
         date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        models.File.objects.create(name=file.name, type='jpg', owner=request.session['id'], time=date, size=file.size)
+        models.FileDetail.objects.create(name=prefix, type=type, owner=request.session['id'], time=date, size=file.size,
+                                   url=base_url+file.name, parent_dir=dir)
+        data = { "result": "success", "detail": {"name": prefix, "type": type, "owner": request.session['id'], "time": date, "size": file.size}}
+        return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')
+
+
+# newFolder 新建文件夹
+@csrf_exempt
+def newFolder(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        type = request.POST.get('type')  # type = 'folder'
+        owner = request.POST.get('owner')
+        parent_dir = request.POST.get('parent_dir')
+        date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+        models.Folder.objects.create(name=name, type=type, owner=request.session['id'], time=date, parent_dir=parent_dir)
         data = 'success'
         return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')
+
