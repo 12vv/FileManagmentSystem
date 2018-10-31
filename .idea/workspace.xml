@@ -3,15 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f2a3e7ba-ca99-4ac8-b1fe-6ec818129a6e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sysite/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/sysite/migrations/0001_initial.py" />
-      <change beforePath="$PROJECT_DIR$/sysite/migrations/0002_auto_20181025_1838.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sysite/migrations/0003_auto_20181025_1840.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sysite/migrations/0004_file.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sysite/migrations/0005_file_parent_dir.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sysite/migrations/0006_auto_20181029_1448.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/file_system/urls.py" afterPath="$PROJECT_DIR$/file_system/urls.py" />
       <change beforePath="$PROJECT_DIR$/sysite/models.py" afterPath="$PROJECT_DIR$/sysite/models.py" />
       <change beforePath="$PROJECT_DIR$/sysite/views.py" afterPath="$PROJECT_DIR$/sysite/views.py" />
+      <change beforePath="$PROJECT_DIR$/templates/static/html/login.html" afterPath="$PROJECT_DIR$/templates/static/html/login.html" />
       <change beforePath="$PROJECT_DIR$/templates/static/html/main.html" afterPath="$PROJECT_DIR$/templates/static/html/main.html" />
+      <change beforePath="$PROJECT_DIR$/templates/static/js/fi_vue.js" afterPath="$PROJECT_DIR$/templates/static/js/fi_vue.js" />
       <change beforePath="$PROJECT_DIR$/templates/static/js/file_manage.js" afterPath="$PROJECT_DIR$/templates/static/js/file_manage.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +26,7 @@
       <file leaf-file-name="getvalue.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/static/js/getvalue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1645">
+            <state relative-caret-position="47">
               <caret line="35" column="71" lean-forward="false" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
               <folding />
             </state>
@@ -39,16 +36,16 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sysite/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="113" column="40" lean-forward="false" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
+            <state relative-caret-position="1142">
+              <caret line="152" column="62" lean-forward="false" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1540884371019" expanded="true" signature="1107:1146" ph="select * fro... sysite_user" />
-                <marker date="1540884371019" expanded="true" signature="1107:1157" ph="select * fro... sysite_user" />
-                <marker date="1540884371019" expanded="true" signature="1107:1174" ph="select * fro... sysite_user" />
-                <marker date="1540884371019" expanded="true" signature="1107:1175" ph="select * fro... sysite_user" />
-                <marker date="1540884371019" expanded="true" signature="1107:1192" ph="select * fro... sysite_user" />
-                <marker date="1540884371019" expanded="true" signature="1107:1578" ph="select * fro... sysite_user" />
+                <marker date="1540967466470" expanded="true" signature="1142:1181" ph="select * fro... sysite_user" />
+                <marker date="1540967466470" expanded="true" signature="1142:1192" ph="select * fro... sysite_user" />
+                <marker date="1540967466470" expanded="true" signature="1142:1209" ph="select * fro... sysite_user" />
+                <marker date="1540967466470" expanded="true" signature="1142:1210" ph="select * fro... sysite_user" />
+                <marker date="1540967466470" expanded="true" signature="1142:1227" ph="select * fro... sysite_user" />
+                <marker date="1540967466470" expanded="true" signature="1142:1613" ph="select * fro... sysite_user" />
               </folding>
             </state>
           </provider>
@@ -57,9 +54,11 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file_system/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="1598">
+              <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+              <folding>
+                <element signature="e#635#667#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,28 +76,28 @@
       <file leaf-file-name="file_manage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/static/js/file_manage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
-              <caret line="80" column="89" lean-forward="false" selection-start-line="80" selection-start-column="89" selection-end-line="80" selection-end-column="89" />
+            <state relative-caret-position="578">
+              <caret line="80" column="94" lean-forward="true" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="94" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sysite/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-80">
-              <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+            <state relative-caret-position="769">
+              <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fi_vue.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fi_vue.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/static/js/fi_vue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="2068">
+              <caret line="44" column="75" lean-forward="false" selection-start-line="44" selection-start-column="75" selection-end-line="44" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -107,11 +106,21 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/static/html/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="982">
-              <caret line="451" column="36" lean-forward="false" selection-start-line="451" selection-start-column="36" selection-end-line="451" selection-end-column="36" />
+            <state relative-caret-position="860">
+              <caret line="454" column="50" lean-forward="false" selection-start-line="454" selection-start-column="50" selection-end-line="454" selection-end-column="50" />
               <folding>
-                <marker date="1540885419134" expanded="false" signature="17174:17186" ph="..." />
+                <marker date="1540987157542" expanded="false" signature="17174:17186" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/static/html/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="658">
+              <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,18 +128,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182971">
+            <state relative-caret-position="47">
               <caret line="3893" column="23" lean-forward="false" selection-start-line="3893" selection-start-column="23" selection-end-line="3893" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/static/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5969">
-              <caret line="127" column="9" lean-forward="false" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -157,16 +156,16 @@
         <option value="$PROJECT_DIR$/templates/static/css/login.css" />
         <option value="$PROJECT_DIR$/templates/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/static/css/bootstrap-reset.css" />
-        <option value="$PROJECT_DIR$/templates/static/html/login.html" />
         <option value="$PROJECT_DIR$/templates/static/js/getvalue.js" />
-        <option value="$PROJECT_DIR$/file_system/urls.py" />
-        <option value="$PROJECT_DIR$/templates/static/js/fi_vue.js" />
         <option value="$PROJECT_DIR$/templates/static/css/main.css" />
         <option value="$PROJECT_DIR$/file_system/settings.py" />
+        <option value="$PROJECT_DIR$/sysite/models.py" />
+        <option value="$PROJECT_DIR$/templates/static/js/file_manage.js" />
+        <option value="$PROJECT_DIR$/templates/static/html/login.html" />
+        <option value="$PROJECT_DIR$/file_system/urls.py" />
         <option value="$PROJECT_DIR$/sysite/views.py" />
         <option value="$PROJECT_DIR$/templates/static/html/main.html" />
-        <option value="$PROJECT_DIR$/templates/static/js/file_manage.js" />
-        <option value="$PROJECT_DIR$/sysite/models.py" />
+        <option value="$PROJECT_DIR$/templates/static/js/fi_vue.js" />
       </list>
     </option>
   </component>
@@ -176,7 +175,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="5459" />
     <option name="y" value="-13" />
     <option name="width" value="3866" />
@@ -199,6 +198,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -238,13 +238,19 @@
               <item name="file_system" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file_system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="file_system" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -309,7 +315,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5459" y="-13" width="3866" height="2106" extended-state="6" />
+    <frame x="5459" y="-13" width="3866" height="2106" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -376,12 +382,12 @@
           <caret line="101" column="26" lean-forward="true" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540884371019" expanded="true" signature="1107:1146" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1157" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1174" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1175" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1192" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1578" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1181" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1192" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1209" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1210" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1227" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1613" ph="select * fro... sysite_user" />
           </folding>
         </state>
       </provider>
@@ -398,7 +404,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1222">
           <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -423,7 +431,7 @@
         <state relative-caret-position="11092">
           <caret line="236" column="102" lean-forward="true" selection-start-line="236" selection-start-column="102" selection-end-line="236" selection-end-column="102" />
           <folding>
-            <marker date="1540885419134" expanded="false" signature="17174:17186" ph="..." />
+            <marker date="1540987157542" expanded="false" signature="17174:17186" ph="..." />
           </folding>
         </state>
       </provider>
@@ -459,12 +467,12 @@
           <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540884371019" expanded="true" signature="1107:1146" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1157" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1174" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1175" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1192" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1578" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1181" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1192" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1209" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1210" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1227" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1613" ph="select * fro... sysite_user" />
           </folding>
         </state>
       </provider>
@@ -499,12 +507,12 @@
           <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540884371019" expanded="true" signature="1107:1146" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1157" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1174" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1175" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1192" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1578" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1181" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1192" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1209" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1210" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1227" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1613" ph="select * fro... sysite_user" />
           </folding>
         </state>
       </provider>
@@ -553,7 +561,7 @@
         <state relative-caret-position="21714">
           <caret line="462" column="28" lean-forward="true" selection-start-line="462" selection-start-column="28" selection-end-line="462" selection-end-column="28" />
           <folding>
-            <marker date="1540885419134" expanded="false" signature="17174:17186" ph="..." />
+            <marker date="1540987157542" expanded="false" signature="17174:17186" ph="..." />
           </folding>
         </state>
       </provider>
@@ -586,7 +594,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="940">
           <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -596,12 +606,12 @@
           <caret line="75" column="24" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540884371019" expanded="true" signature="1107:1146" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1157" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1174" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1175" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1192" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1578" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1181" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1192" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1209" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1210" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1227" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1613" ph="select * fro... sysite_user" />
           </folding>
         </state>
       </provider>
@@ -611,7 +621,7 @@
         <state relative-caret-position="329">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <marker date="1540885419134" expanded="false" signature="17174:17186" ph="..." />
+            <marker date="1540987157542" expanded="false" signature="17174:17186" ph="..." />
           </folding>
         </state>
       </provider>
@@ -677,14 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static/html/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5969">
@@ -693,42 +695,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static/js/getvalue.js">
+    <entry file="file://$PROJECT_DIR$/templates/static/html/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1645">
-          <caret line="35" column="71" lean-forward="false" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
+        <state relative-caret-position="658">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182971">
+        <state relative-caret-position="47">
           <caret line="3893" column="23" lean-forward="false" selection-start-line="3893" selection-start-column="23" selection-end-line="3893" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file_system/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/static/js/getvalue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="47">
+          <caret line="35" column="71" lean-forward="false" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sysite/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="113" column="40" lean-forward="false" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
+        <state relative-caret-position="1142">
+          <caret line="152" column="62" lean-forward="false" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540884371019" expanded="true" signature="1107:1146" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1157" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1174" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1175" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1192" ph="select * fro... sysite_user" />
-            <marker date="1540884371019" expanded="true" signature="1107:1578" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1181" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1192" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1209" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1210" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1227" ph="select * fro... sysite_user" />
+            <marker date="1540967466470" expanded="true" signature="1142:1613" ph="select * fro... sysite_user" />
           </folding>
         </state>
       </provider>
@@ -741,36 +743,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static/js/fi_vue.js">
+    <entry file="file://$PROJECT_DIR$/file_system/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="1598">
+          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/static/html/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="982">
-          <caret line="451" column="36" lean-forward="false" selection-start-line="451" selection-start-column="36" selection-end-line="451" selection-end-column="36" />
+        <state relative-caret-position="860">
+          <caret line="454" column="50" lean-forward="false" selection-start-line="454" selection-start-column="50" selection-end-line="454" selection-end-column="50" />
           <folding>
-            <marker date="1540885419134" expanded="false" signature="17174:17186" ph="..." />
+            <marker date="1540987157542" expanded="false" signature="17174:17186" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static/js/file_manage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="80" column="89" lean-forward="false" selection-start-line="80" selection-start-column="89" selection-end-line="80" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sysite/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        <state relative-caret-position="769">
+          <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/static/js/file_manage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="80" column="94" lean-forward="true" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/static/js/fi_vue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2068">
+          <caret line="44" column="75" lean-forward="false" selection-start-line="44" selection-start-column="75" selection-end-line="44" selection-end-column="75" />
           <folding />
         </state>
       </provider>

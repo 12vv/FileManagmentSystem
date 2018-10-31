@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="shortcut icon" href="{% static 'images/blog.ico" type="image/x-icon' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/sys1.ico' %}">
     <title>文件管理系统</title>
     <link rel="stylesheet" href="{% static 'css/jquery-ui-1.10.3.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -445,15 +445,15 @@
             <td class=" ">所有者</td>
             <td class="hidden-phone ">修改日期</td>
             <td class="center hidden-phone ">类型</td>
-            <td class="center hidden-phone ">加锁</td>
-            <td class="center hidden-phone ">加锁</td>
+            <td class="center hidden-phone ">大小</td>
+            <td class="center hidden-phone ">权限</td>
         <tbody role="alert" aria-live="polite" aria-relevant="all" id="info">
         <tr class="" v-for="info in info_items"><td class="center "><span class="pull-left chk"><input type="checkbox"/></span></td>
-            <td><i class="fa fa-file-o"></i>{% verbatim myblock %}{{ info.name }}{% endverbatim myblock %}</td>
+            <td class="title"><i class="fa fa-file-o"></i>{% verbatim myblock %}{{ info.name }}{% endverbatim myblock %}</td>
             <td>{% verbatim myblock %}{{ info.owner }}{% endverbatim myblock %}</td>
             <td>{% verbatim myblock %}{{ info.time }}{% endverbatim myblock %}</td>
-            <td>{% verbatim myblock %}{{ info.lock }}{% endverbatim myblock %}</td>
-            <td>A</td>
+            <td>{% verbatim myblock %}{{ info.type }}{% endverbatim myblock %}</td>
+            <td>123k</td>
             <td>A</td>
         </tr>
 

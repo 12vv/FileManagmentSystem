@@ -22,7 +22,7 @@ class File(models.Model):
 
 
 class Folder(models.Model):
-    fold_id = models.BigAutoField(primary_key=True)
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=20)
     type = models.CharField(max_length=10)
     owner = models.CharField(max_length=20)

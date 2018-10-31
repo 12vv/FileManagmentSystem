@@ -31,5 +31,7 @@ urlpatterns = [
     path('register', views.register),
     path('logout', views.logout),
     path('upload', views.upload),
+    path('newFolder', views.newFolder),
+    path('getFile', views.getFile),
     # path('media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

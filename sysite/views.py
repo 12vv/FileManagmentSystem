@@ -5,7 +5,7 @@ from sysite import models
 import time
 import re
 import os
-
+from django.core import serializers
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 
@@ -134,6 +134,21 @@ def newFolder(request):
         parent_dir = request.POST.get('parent_dir')
         date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
         models.Folder.objects.create(name=name, type=type, owner=request.session['id'], time=date, parent_dir=parent_dir)
-        data = 'success'
+        data = {"result": "success",
+                "detail": {"name": name, "type": type, "owner": request.session['id'], "time": date}}
         return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')
 
+
+# getFile 获取当前目录下文件和文件夹
+@csrf_exempt
+def getFile(request):
+    if request.method == 'GET':
+        dir = request.GET.get("dir")
+        all_folder = models.Folder.objects.filter(parent_dir=dir)
+        all_file = models.FileDetail.objects.filter(parent_dir=dir)
+        folders = serializers.serialize("json", all_folder)
+        files = serializers.serialize("json", all_file)
+        print(json.dumps(folders))
+        data = {"result": "success",
+                "message": {"folders": folders, "files": files}}
+        return HttpResponse(json.dumps(data, cls=JSONEncoder), content_type='application/json')

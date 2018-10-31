@@ -105,38 +105,52 @@ $(document).ready(function() {
 
     $('#new_file').click(function (e) {
         var file_name = $('#input_name').val();
-        console.log("成功创建文件夹" + file_name);
-        var dir = $('.dir').children("li:last-child").text();
-        console.log(dir);
-        var mydate = new Date();
-        var date = mydate.toLocaleDateString();
-        //创建文件夹请求
-        // $.ajax({
-        //     url: 'newFolder',
-        //     type: 'post',
-        //     data: {
-        //         name: file_name,
-        //         parent_dir: dir,
-        //         date: date,
-        //         owner: session,
-        //         type: 'folder',
-        //     },
-        //     success: function(e){
-        //         console.log(e);
-        //         // $('#myModal').modal('hide');
-        //         // gb.modal.tip_small.show('上传成功', 'success');
-        //         //直接在页面显示
-        //         // $('#info').prepend("")
-        //     }
-        // });
-
-        //成功插入数据库后执行
-        $('#myModal_new').modal('hide');
-        $('#info').prepend("<tr><td class=\"center \"><span class=\"pull-left chk\"><input type=\"checkbox\"/></span></td><td><i class=\"fa fa-folder-o\"></i>"+file_name+"</td>\n" +
-            "<td>"+session+"</td>\n" +
-            "<td>"+date+"</td>\n" +
-            "<td>"+'folder'+"</td>\n" +
-            "<td>A</td>\n" +
-            "<td>A</td></tr>");
+        //遍历查看当前目录下是否有重名
+        var flag = 0;
+        var titles = $("#info").find(".title");
+        console.log(titles);
+        for (var i = 0; i < titles.length; i++){
+            if (titles[i].innerText == file_name) {
+                gb.modal.tip_small.show('已存在此文件夹', 'error');
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0){
+            console.log("成功创建文件夹: " + file_name);
+            var dir = $('.dir').children("li:last-child").text();
+            console.log(dir);
+            var mydate = new Date();
+            var date = mydate.toLocaleDateString();
+            //创建文件夹请求
+            $.ajax({
+                url: 'newFolder',
+                type: 'post',
+                data: {
+                    name: file_name,
+                    parent_dir: dir,
+                    date: date,
+                    owner: session,
+                    type: 'folder',
+                },
+                success: function(data){
+                    console.log(data);
+                    if (data.result == 'success'){
+                        gb.modal.tip_small.show('上传成功', 'success');
+                        //成功插入数据库后执行
+                        $('#myModal_new').modal('hide');
+                        $('#info').prepend("<tr><td class=\"center \"><span class=\"pull-left chk\"><input type=\"checkbox\"/></span></td><td class=\"title\"><i class=\"fa fa-folder-o\"></i>"+file_name+"</td>\n" +
+                            "<td>"+session+"</td>\n" +
+                            "<td>"+data.detail.time+"</td>\n" +
+                            "<td>folder</td>\n" +
+                            "<td>/</td>\n" +
+                            "<td>/</td></tr>");
+                    }else{
+                        console.log("无法上传！");
+                        gb.modal.tip_small.show('无法上传', 'error');
+                    }
+                }
+            });
+        }
     })
 });
