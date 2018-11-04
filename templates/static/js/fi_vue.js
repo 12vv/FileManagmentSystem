@@ -60,5 +60,32 @@ $(function() {
     })
 
     //加载完成页面执行
-    infos.getFile("Dashboard");
+    infos.getFile("Home");
+    //点击目录执行
+    $('.row').on('click','li',function (e) {
+        //trim()方法去掉空格
+        var dir = $(this).text().trim();
+        infos.getFile(dir);
+    })
+    //点击了文件或文件夹
+    $('#info').on('click','tr',function (e) {
+        // $(this).children('td').eq(0).find("input").one("change",function(){
+        //     console.log("状态改变");
+        // })
+
+        //判断是否点击选择框
+        if (e.target.type == 'checkbox'){
+            console.log("choose or not!");
+        }else{
+                var type = $(this).children('td').eq(4).text();
+                var name = $(this).children('td').eq(1).text();
+                console.log("type: " + type);
+                if (type == "folder"){
+                    $('.row .dir').append("<li><a href=\"#\">"+ name +"</a></li>");
+                    infos.getFile(name);
+                }else{
+                    console.log("这是文件");
+                }
+        }
+    })
 })

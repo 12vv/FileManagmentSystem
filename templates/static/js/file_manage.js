@@ -6,7 +6,7 @@ $(document).ready(function() {
     //控件初始化
     gb.modal.tip.init();
     gb.modal.tip_small.init();
-    gb.pagination.init('#paging1', 1, 4);
+    gb.pagination.init('#paging1', 1, 1);
     //上传文件
     var confirmId1 = gb.modal.confirm.init(function() {
         console.log("upload!");
@@ -96,6 +96,11 @@ $(document).ready(function() {
 
     $("#edit").click(function (e) {
         console.log($('.ed_text').val());
+    })
+
+    //删除文件
+    $(".delete").click(function (e) {
+        // console.log($('.ed_text').val());
     })
 
     $('.new_file').click(function (e) {
