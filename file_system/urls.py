@@ -22,9 +22,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('', views.login_page, name='login_page'),
     path('main', views.main),
+    path('admin', views.admin),
     path('login', views.login, name='login'),
     path('testUsername', views.id_confirm),
     path('testEmail', views.email_confirm),
@@ -33,5 +34,23 @@ urlpatterns = [
     path('upload', views.upload),
     path('newFolder', views.newFolder),
     path('getFile', views.getFile),
+    path('delete', views.delete),
+    path('newOrEdit', views.newOrEdit),
+    path('getType', views.getType),
+    path('getFileByType', views.getFileByType),
+    path('getDeleted', views.getDeleted),
+    path('getVolume', views.getVolume),
+    path('getChildren', views.getChildren),
+    path('rename', views.rename),
+    path('paste', views.paste),
+    path('getNode', views.getNode),
+    path('getAllUser', views.getAllUser),
+    path('getFriend', views.getFriend),
+    path('getnews', views.getnews),
+    path('undo', views.undo),
+    path('share', views.share),
+    #ADMIN
+    path('adminGetFile', views.adminGetFile),
+    path('adminMessage', views.adminMessage),
     # path('media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

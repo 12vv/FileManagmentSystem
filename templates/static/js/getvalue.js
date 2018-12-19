@@ -29,8 +29,12 @@ function login() {
 				password: password
 			},
 			success: function(data) {
-				if (data == 'success') {
-					window.location = base_url + "/main";
+				if (data.result == 'success') {
+					if (data.level != '0'){
+						window.location = base_url + "/main";
+					}else{
+						window.location = base_url + "/admin";
+					}
 				} else if (data == "error"){
 					$('.l-u-tip').text("用户名不存在或密码错误").fadeIn();
 					// gb.modal.tip_small.show('用户名不存在或密码错误', 'error');
@@ -75,8 +79,8 @@ function ID_confirm() {
 			} else if(P_userid_S.test(registerUserid) == false) {
 				$('.r-u-tip').text("只能输入英文，数字，_");
 				$('.r-u-tip').fadeIn();
-			} else if(registerUserid.length < 6 ) {
-				$('.r-u-tip').text("长度必须大于6");
+			} else if(registerUserid.length < 2 ) {
+				$('.r-u-tip').text("长度必须大于2");
 				$('.r-u-tip').fadeIn();
 			} else {
 				$.ajax({

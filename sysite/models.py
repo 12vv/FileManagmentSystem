@@ -9,20 +9,18 @@ class User(models.Model):
     password = models.CharField(max_length=200)
 
 
-# unused
 class File(models.Model):
-    file_id = models.BigAutoField(primary_key=True)
+    id = models.CharField(max_length=20, primary_key=True)
     name = models.CharField(max_length=20)
     type = models.CharField(max_length=10)
-    owner = models.CharField(max_length=20)
+    author = models.CharField(max_length=20)
     time = models.DateField()
     size = models.CharField(max_length=10)
-    parent_dir = models.CharField(max_length=30, default="Home")
     url = models.CharField(max_length=250, default='/')
 
 
 class Folder(models.Model):
-    id = models.BigAutoField(primary_key=True)
+    id = models.CharField(max_length=20, primary_key=True)
     name = models.CharField(max_length=20)
     type = models.CharField(max_length=10)
     owner = models.CharField(max_length=20)
@@ -30,12 +28,24 @@ class Folder(models.Model):
     parent_dir = models.CharField(max_length=30, default="Home")
 
 
-class FileDetail(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=20)
-    type = models.CharField(max_length=10)
-    owner = models.CharField(max_length=20)
-    time = models.DateField()
-    size = models.CharField(max_length=10)
-    parent_dir = models.CharField(max_length=30, default="Home")
-    url = models.CharField(max_length=250, default='/')
+class FileUser(models.Model):
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+    fileId = models.ForeignKey(File, on_delete=models.CASCADE)
+    dir = models.CharField(max_length=20)
+    oDate = models.DateField()
+    status = models.IntegerField()
+
+    class Meta:
+        unique_together = ("userId", "fileId")
+
+
+# unused
+# class FileDetail(models.Model):
+#     id = models.CharField(max_length=20, primary_key=True)
+#     name = models.CharField(max_length=20)
+#     type = models.CharField(max_length=10)
+#     owner = models.CharField(max_length=20)
+#     time = models.DateField()
+#     size = models.CharField(max_length=10)
+#     parent_dir = models.CharField(max_length=30, default="Home")
+#     url = models.CharField(max_length=250, default='/')

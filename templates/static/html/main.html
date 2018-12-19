@@ -11,13 +11,40 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 {#    <link rel="stylesheet" href="{% static 'css/bootstrap-reset.css' %}">#}
     <link rel="stylesheet" href="{% static 'css/bootstrap-fileupload.min.css' %}">
+{#    <link rel="stylesheet" href="{% static 'js/fuelux/css/tree-style.css' %}">#}
+    <link rel="stylesheet" href="{% static 'css/zTreeStyle/zTreeStyle.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-responsive.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 
 <body>
-<input type="hidden" id="hdnSession" data-value={{sess}} />
+
+<input type="hidden" id="hdnSession" data-value1={{sessid}} data-value2={{sessname}} data-value3={{ level }}/>
+<!--右键下拉菜单-->
+<ul class="cus-menu dropdown-menu">
+    <li class="rename"><span class="actionName">重命名</span></li>
+    <li class="copy"><span class="actionName">复制</span></li>
+    <li class="cut"><span class="actionName">剪切</span></li>
+    <li class="paste"><span class="actionName">粘贴</span></li>
+</ul>
+
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+        <!-- tree start-->
+        <div class="col-md-6 treee">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            文件目录
+                        </div>
+                        <div class="panel-body">
+                            <ul id="treeDemo" class="ztree"></ul>
+                        </div>
+                    </div>
+                </div>
+
+    </div>
+    <!-- left side end-->
 
     <!-- main content start-->
     <div class="main-content" style="min-height: 800px">
@@ -26,12 +53,12 @@
         <div class="header-section">
 
         <!--toggle button start-->
-        <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+        <a class="toggle-btn mulu"><i class="fa fa-bars"></i></a>
         <!--toggle button end-->
 
         <!--search start-->
         <form class="searchform" action="index.html" method="post">
-            <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            <input type="text" class="form-control" placeholder="Search here..." />
         </form>
         <!--search end-->
 
@@ -110,99 +137,66 @@
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li class="contacts">
                     <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
                         <i class="fa fa-envelope-o"></i>
-                        <span class="badge">5</span>
+                        <span class="badge">3</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-head pull-right">
-                        <h5 class="title">You have 5 Mails </h5>
+                    <div class="dropdown-menu dropdown-menu-head pull-right" id="contacts">
+{#                        <h5 class="title">You have {% verbatim myblock %}{{ count }}{% endverbatim myblock %} Mails </h5>#}
+                        <h5 class="title">分享给联系人</h5>
                         <ul class="dropdown-list normal-list">
-                            <li class="new">
-                                <a href="">
-                                    <span class="thumb"><img src="images/photos/user1.png" alt="" /></span>
+                            <li class="" v-for="i in contact_items" :id="i.id">
+{#                                    <span class="thumb"><img src="{% static 'images/blog.jpg' %}" alt="" /></span>#}
                                         <span class="desc">
-                                          <span class="name">John Doe <span class="badge badge-success">new</span></span>
-                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                          <span class="name">{% verbatim myblock %}{{ i.name }}{% endverbatim myblock %}
+{#                                              <span class="badge badge-success">new</span>#}
+                                          </span>
+{#                                          <span class="msg">Lorem ipsum dolor sit amet...</span>#}
                                         </span>
-                                </a>
+
                             </li>
-                            <li>
-                                <a href="">
-                                    <span class="thumb"><img src="images/photos/user2.png" alt="" /></span>
-                                        <span class="desc">
-                                          <span class="name">Jonathan Smith</span>
-                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="thumb"><img src="images/photos/user3.png" alt="" /></span>
-                                        <span class="desc">
-                                          <span class="name">Jane Doe</span>
-                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="thumb"><img src="images/photos/user4.png" alt="" /></span>
-                                        <span class="desc">
-                                          <span class="name">Mark Henry</span>
-                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="thumb"><img src="images/photos/user5.png" alt="" /></span>
-                                        <span class="desc">
-                                          <span class="name">Jim Doe</span>
-                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
-                                        </span>
-                                </a>
-                            </li>
-                            <li class="new"><a href="">Read All Mails</a></li>
+
+                            <li class="new"><a href="">All Friends</a></li>
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li class="notification">
                     <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>
-                        <span class="badge">4</span>
+                        <span class="badge">!</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-head pull-right">
-                        <h5 class="title">Notifications</h5>
+                    <div class="dropdown-menu dropdown-menu-head pull-right" id="notification">
+                        <h5 class="title">通知</h5>
                         <ul class="dropdown-list normal-list">
-                            <li class="new">
+                            <li class="" v-for="i in news_items" :id="i.id">
                                 <a href="">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                                    <span class="name">Server #1 overloaded.  </span>
-                                    <em class="small">34 mins</em>
+{#                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>#}
+                                    <span class="content">{% verbatim myblock %}{{ i.content }}{% endverbatim myblock %}</span>
+{#                                    <em class="small">34 mins</em>#}
                                 </a>
                             </li>
-                            <li class="new">
-                                <a href="">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                                    <span class="name">Server #3 overloaded.  </span>
-                                    <em class="small">1 hrs</em>
-                                </a>
-                            </li>
-                            <li class="new">
-                                <a href="">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                                    <span class="name">Server #5 overloaded.  </span>
-                                    <em class="small">4 hrs</em>
-                                </a>
-                            </li>
-                            <li class="new">
-                                <a href="">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                                    <span class="name">Server #31 overloaded.  </span>
-                                    <em class="small">4 hrs</em>
-                                </a>
-                            </li>
+{#                            <li class="new">#}
+{#                                <a href="">#}
+{#                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>#}
+{#                                    <span class="name">Server #3 overloaded.  </span>#}
+{#                                    <em class="small">1 hrs</em>#}
+{#                                </a>#}
+{#                            </li>#}
+{#                            <li class="new">#}
+{#                                <a href="">#}
+{#                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>#}
+{#                                    <span class="name">Server #5 overloaded.  </span>#}
+{#                                    <em class="small">4 hrs</em>#}
+{#                                </a>#}
+{#                            </li>#}
+{#                            <li class="new">#}
+{#                                <a href="">#}
+{#                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>#}
+{#                                    <span class="name">Server #31 overloaded.  </span>#}
+{#                                    <em class="small">4 hrs</em>#}
+{#                                </a>#}
+{#                            </li>#}
                             <li class="new"><a href="">See All Notifications</a></li>
                         </ul>
                     </div>
@@ -210,7 +204,7 @@
                 <li>
                     <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                         <img src="images/photos/user-avatar.png" alt="" />
-                        {{ sess }}
+                        {{ sessname }}
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
@@ -240,31 +234,28 @@
                         </div>
 
                         <ul class="nav nav-pills nav-stacked mail-navigation file_mau">
-                            <li><a href="#"><i class="fa fa-inbox"></i> 新建文件</a></li>
+                            <li class="edit"><a href="#"><i class="fa fa-file-text-o"></i> 新建文件</a></li>
                             <li class="new_file"><a href="#"> <i class="fa fa-envelope-o"></i> 新建文件夹</a></li>
 {#                            <li><a href="#"> <i class="fa fa-certificate"></i><span class="label label-info pull-right inbox-notification">34</span></a></li>#}
-                            <li class="edit"><a href="#"> <i class="fa fa-file-text-o"></i> 编辑文件</a></li>
+{#                            <li class="edit"><a href="#"> <i class="fa fa-file-text-o"></i> 编辑文件</a></li>#}
                             <li class="delete"><a href="#"> <i class="fa fa-trash-o"></i> 删除 </a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i>文件锁定</a></li>
+                            <li class="allFiles"><a href="#"> <i class="fa fa-certificate"></i>资源分类</a></li>
+                            <li class="recycle"><a href="#"> <i class="fa fa-refresh"></i>回收站</a></li>
+                            <li class="undo"><a href="#"> <i class="fa fa-undo"></i>复原文件</a></li>
+                            <li class="share"><a href="#"> <i class="fa fa-share"></i>分享文件</a></li>
                         </ul>
-{##}
-{#                        <ul class="nav nav-pills nav-stacked labels-info ">#}
-{#                            <li> <h5>Buddy online</h5> </li>#}
-{#                            <li> <a href="#"> <i class="fa fa-comments text-success"></i> Jonathan Smith <p>I do not think</p></a>  </li>#}
-{#                            <li> <a href="#"> <i class="fa fa-comments text-danger"></i> iRon <p>Busy with coding</p></a> </li>#}
-{#                            <li> <a href="#"> <i class="fa fa-comments text-muted "></i> Anjelina Joli <p>I out of control</p></a></li>#}
-{#                            <li> <a href="#"> <i class="fa fa-comments text-muted "></i> Tis man <p>I do not think</p></a>  </li>#}
-{#                        </ul>#}
                     </div>
                     <header class="header other"> <h4>磁盘空间</h4> </header>
+                        <div id="disk">
                                     <div class="progress progress-striped add_dis">
-                                        <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
-                                            <span class="">80% </span>
+{#                                     #}
+                                        <div :style="{width:percent}" :aria-valuemax="volume" aria-valuemin="0" :aria-valuenow="used" role="progressbar" class="progress-bar disk_bar">
+                                            <span class="">{% verbatim myblock %}{{ percent }}{% endverbatim myblock %}</span>
                                         </div>
                                     </div>
-                                </a>
-                            </li>
-                            <li class="new new1">See All Pending Task</li>
+
+                            <li class="new new1">{% verbatim myblock %}{{ used }}/{{ volume }}{% endverbatim myblock %}</li>
+                        </div>
                     <!--<footer class="text-center">
                         <div class="btn-group">
                             <a href="javascript:;" class="btn mini btn-default">
@@ -284,8 +275,7 @@
             <div class="col-md-12">
                 <!--breadcrumbs start -->
                 <ul class="breadcrumb panel dir">
-                    <li class="active"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-{#                    <li><a href="#">Dashboard</a></li>#}
+                    <li class="active home" id={{sessid}}><a href="#"><i class="fa fa-home"></i> Home</a></li>
                 </ul>
                 <!--breadcrumbs end -->
             </div>
@@ -401,6 +391,39 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+                                    <!-- 模态框（Modal） 重命名-->
+<div class="modal fade" id="myModal_rename" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content add_ne">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    重命名
+                </h4>
+            </div>
+            <div class="modal-body renamee">
+                    <!--重命名-->
+                    <div class="panel-body">
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">重命名：</label>
+                                <input class="form-control" id="input_name" placeholder="重命名">
+                            </div>
+                        </form>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" id="rename">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
                     <!-- 模态框（Modal） 编辑文件-->
 <div class="modal fade" id="myModal_edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -409,20 +432,17 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;
                 </button>
-                <h4 class="modal-title" id="myModalLabel">
+                <h4 class="modal-title ed_re" id="myModalLabel">
                     编辑文件
                 </h4>
             </div>
             <div class="modal-body">
                     <!--编辑文件-->
-                    <div class="panel-body">
-                            <form action="#" class="form-horizontal ">
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <textarea class="wysihtml5 form-control ed_text" rows="9" style=""></textarea><input type="hidden" name="_wysihtml5_mode" value="1">
-                                    </div>
-                                </div>
-                            </form>
+                    <div class="panel-body review">
+                        <div class="editor">
+                            <input type="text" class="form-control" placeholder="title" disabled="false">
+                            <textarea rows="6" class="form-control" value="What is on your mind..." disabled="false"></textarea>
+                        </div>
                     </div>
             </div>
             <div class="modal-footer">
@@ -436,34 +456,27 @@
     </div><!-- /.modal -->
 </div>
 
-<div class="panel-body">
+<div class="panel-body files">
         <div class="adv-table add_tr">
         <div id="hidden-table-info_wrapper" class="dataTables_wrapper form-inline" role="grid"><table class="display table table-bordered dataTable" id="hidden-table-info" aria-describedby="hidden-table-info_info">
 
-        <tr class="gradeA even"><td class="center "><span class="pull-left chk"><input type="checkbox"/></span></td>
+        <tr class="gradeA even"><td class="center "><span class="pull-left chk"><input type="checkbox" class="seleteAll"/></span></td>
             <td class="  sorting_1">文件名</td>
-            <td class=" ">所有者</td>
-            <td class="hidden-phone ">修改日期</td>
+            <td class=" ">创建者</td>
+            <td class="datee">创建日期</td>
             <td class="center hidden-phone ">类型</td>
             <td class="center hidden-phone ">大小</td>
             <td class="center hidden-phone ">权限</td>
         <tbody role="alert" aria-live="polite" aria-relevant="all" id="info">
-        <tr class="" v-for="info in info_items"><td class="center "><span class="pull-left chk"><input type="checkbox"/></span></td>
-            <td class="title"><i class="fa fa-file-o"></i>{% verbatim myblock %}{{ info.name }}{% endverbatim myblock %}</td>
-            <td>{% verbatim myblock %}{{ info.owner }}{% endverbatim myblock %}</td>
+        <tr class="" v-for="info in info_items" :id="info.id"><td class="center "><span class="pull-left chk"><input type="checkbox"/></span></td>
+            <td class="title"><i class="fa fa-file-o" v-if="info.type!='folder'"></i><i class="fa fa-folder-o" v-if="info.type=='folder'"></i>{% verbatim myblock %}{{ info.name }}{% endverbatim myblock %}</td>
+            <td :id="info.authorId">{% verbatim myblock %}{{ info.author }}{% endverbatim myblock %}</td>
             <td>{% verbatim myblock %}{{ info.time }}{% endverbatim myblock %}</td>
-            <td>{% verbatim myblock %}{{ info.type }}{% endverbatim myblock %}</td>
-            <td>123k</td>
-            <td>A</td>
+            <td class="type">{% verbatim myblock %}{{ info.type }}{% endverbatim myblock %}</td>
+            <td>{% verbatim myblock %}{{ info.size }}{% endverbatim myblock %}</td>
+            <td>{% verbatim myblock %}{{ info.mode }}{% endverbatim myblock %}</td>
         </tr>
-
-        <!--<tr class="gradeA even"><td class="center "><img src="images/details_open.png"></td>
-            <td class="  sorting_1">Webkit</td>
-            <td class=" ">Safari 1.3</td>
-            <td class="hidden-phone ">OSX.3</td>
-            <td class="center hidden-phone ">312.8</td>
-            <td class="center hidden-phone ">A</td>
-        </tr>--></tbody></table>
+        </tbody></table>
 
             <div class="row-fluid">
                 <nav class="paging" id="paging1" data-current="1" data-all="4"></nav>
@@ -473,11 +486,99 @@
         </div>
         </div>
 
+                    <div class="panel-body filesDisplay" id="allDisplay">
+
+                            <ul id="filters" class="media-filter">
+                                <li><a href="#" data-filter="*">All</a></li>
+                                <li v-for="cate in cate_items"><a href="#" :data-filter="cate.type" :data-count="cate.count">{% verbatim myblock %}{{ cate.type }}{% endverbatim myblock %}</a></li>
+                            </ul>
+                            <div id="gallery" class="media-gal">
+                                <div :class="[files.type, item] " v-for="files in files_items" :data-type="files.type" :id="files.id" :data-name="files.name" :data-mode="files.mode" :data-authorId="files.authorId">
+                                    <a href="#myModal" v-if="files.type!='txt'">
+                                        <img :src="files.url" alt="" />
+{#                                        <img v-if="files.type =='txt'" :src="{% static 'images/txtt.jpg' %}" alt="" />#}
+                                    </a>
+                                    <a href="#myModal" v-if="files.type =='txt'">
+                                        <img src="media/txtt.jpg" alt="" />
+                                    </a>
+                                    <p> {% verbatim myblock %}{{files.name}}{% endverbatim myblock %} </p>
+                                </div>
+
+
+                            </div>
+
+{#                            <div class="col-md-12 text-center clearfix">#}
+{#                                <ul class="pagination">#}
+{#                                    <li><a href="#">«</a></li>#}
+{#                                    <li><a href="#">1</a></li>#}
+{#                                    <li><a href="#">2</a></li>#}
+{#                                    <li><a href="#">3</a></li>#}
+{#                                    <li><a href="#">4</a></li>#}
+{#                                    <li><a href="#">5</a></li>#}
+{#                                    <li><a href="#">»</a></li>#}
+{#                                </ul>#}
+{#                            </div>#}
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title">Edit Media Gallery</h4>
+                                        </div>
+
+                                        <div class="modal-body row">
+
+                                            <div class="col-md-5 img-modal">
+                                                <img src="images/gallery/image1.jpg" alt="">
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit Image</a>
+                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-eye"></i> View Full Size</a>
+
+                                                <p class="mtop10"><strong>File Name:</strong> img01.jpg</p>
+                                                <p><strong>File Type:</strong> jpg</p>
+                                                <p><strong>Resolution:</strong> 300x200</p>
+                                                <p><strong>Uploaded By:</strong> <a href="#">ThemeBucket</a></p>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+                                                    <label> Name</label>
+                                                    <input id="name" value="img01.jpg" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label> Tittle Text</label>
+                                                    <input id="title" value="awesome image" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label> Description</label>
+                                                    <textarea rows="2" class="form-control"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label> Link URL</label>
+                                                    <input id="link" value="images/gallery/img01.jpg" class="form-control">
+                                                </div>
+                                                <div class="pull-right">
+                                                    <button class="btn btn-danger btn-sm" type="button">Delete</button>
+                                                    <button class="btn btn-success btn-sm" type="button">Save changes</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal -->
+
+                        </div>
+
                 </section>
             </div>
 
         </div>
         <!--body wrapper end-->
+
+
+
 
         <!--footer section start-->
         <footer class="sticky-footer">
@@ -496,8 +597,19 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/jquery.nicescroll.js' %}"></script>
     <script src="{% static 'js/vue.min.js' %}"></script>
+    <script src="{% static 'js/jquery.isotope.js' %}"></script>
+
+    <!--tree-->
+{#    <script src="{% static 'js/fuelux/js/tree.min.js' %}"></script>#}
+{#    <script src="{% static 'js/tree-init.js' %}"></script>#}
+{#    <script src="{% static 'js/bootstrap-treeview.js' %}"></script>#}
+    <script src="{% static 'js/jquery.ztree.core.min.js' %}"></script>
+
     <script src="{% static 'js/global.js' %}"></script>
     <script src="{% static 'js/file_manage.js' %}"></script>
     <script src="{% static 'js/fi_vue.js' %}"></script>
+
+
+
 </body>
 </html>

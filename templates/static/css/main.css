@@ -10,7 +10,7 @@ body {
 }
 
 .modal-dialog{
-    width: 300px;
+    /*width: 300px;*/
 }
 
 .column-title{
@@ -19,7 +19,7 @@ body {
 
 .main-content{
     height: 100%;
-    margin-left: 0;
+    /*margin-left: 0;*/
 }
 
 .sticky-footer{
@@ -85,7 +85,7 @@ body {
 
 /*编辑框*/
 .add_ed{
-    width: 800px;
+    width: 90%;
 }
 
 li{
@@ -127,8 +127,107 @@ ul.wysihtml5-toolbar > li {
 
 textarea{
     resize: none;
+    margin-top: 20px;
 }
 
 #info i{
     padding-right: 10px;
+}
+
+.inimg{
+    width: 90%;
+}
+
+.editor{
+    display: none;
+}
+
+.filesDisplay{
+    display: none;
+}
+
+.media-gal .item img{
+    height: 180px;
+}
+
+.mail-nav-bg-color {
+    background: aliceblue;
+}
+
+.mail-nav h4{
+    background: #667a9a;
+}
+
+.cus-menu{
+    min-width: 0!important;
+    /*position: static;*/
+    display: none;
+}
+.cus-menu li{
+    padding: 5px;
+}
+
+.cus-menu span{
+    padding: 5px 10px;
+}
+
+.cus-menu:hover{
+    cursor: pointer;
+}
+
+.cus-menu li:hover{
+    background-color: #d3d3d373;
+}
+
+#info tr:hover{
+    cursor: pointer;
+    background-color: #d3d3d345;
+}
+
+.treee{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.mulu{
+    display: block!important;
+}
+
+.ztree li{
+    padding: 5px;
+}
+
+.ztree li a{
+    color: white;
+}
+
+.treee .panel{
+    background-color: #424f63;
+}
+
+.treee .panel-heading{
+    color: white;
+}
+
+.ztree li a.curSelectedNode{
+    background-color: white;
+    border: 1px white solid;
+    color: black;
+}
+
+.dropdown-list .desc{
+    margin-left: 0;
+}
+
+#contacts{
+    min-width: 150px;
+}
+
+#contacts li.active{
+    background-color: ghostwhite;
+}
+
+#contacts li:hover{
+    cursor: pointer;
+    background-color: #d3d3d373;
 }
