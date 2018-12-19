@@ -86,10 +86,12 @@ WSGI_APPLICATION = 'file_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'file_system',
+        # 'NAME': 'file_system',
+        'NAME': 'Garrick$file_system',
         'USER': 'Garrick',
         'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
+        # 'HOST': '127.0.0.1',
+        'HOST': 'Garrick.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
